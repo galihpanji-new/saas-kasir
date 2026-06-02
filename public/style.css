@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+css
+/* =========================
+   GALIH KASIR PRO X
+========================= */
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2,
+        #6dd5ed
+    );
+
+    background-size:300% 300%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ================= LOGIN ================= */
+
+#loginPage{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+}
+
+.login-container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    min-height:650px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    background:
+    rgba(255,255,255,.15);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.2);
+}
+
+.login-left{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px;
+
+    color:white;
+}
+
+.brand h1{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+.brand p{
+
+    font-size:18px;
+
+    line-height:1.8;
+}
+
+.login-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    rgba(255,255,255,.1);
+}
+
+.login-card{
+
+    width:90%;
+
+    max-width:420px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.2);
+
+    backdrop-filter:blur(15px);
+}
+
+.login-card h2{
+
+    color:white;
+
+    margin-bottom:10px;
+}
+
+.login-card p{
+
+    color:#e5e7eb;
+
+    margin-bottom:25px;
+}
+
+.login-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+}
+
+.login-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+        90deg,
+        #10b981,
+        #06b6d4
+    );
+}
+
+/* ================= DASHBOARD ================= */
+
+#dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+    width:270px;
+
+    background:
+    rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    color:white;
+
+    padding:30px;
+
+    border-right:
+    1px solid rgba(255,255,255,.2);
+}
+
+.logo{
+
+    margin-bottom:50px;
+}
+
+.logo h2{
+
+    font-size:28px;
+}
+
+.sidebar ul{
+
+    list-style:none;
+}
+
+.sidebar li{
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.sidebar li:hover{
+
+    background:
+    rgba(255,255,255,.15);
+}
+
+.sidebar i{
+
+    margin-right:10px;
+}
+
+.sidebar button{
+
+    width:100%;
+
+    margin-top:40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:#ef4444;
+}
+
+/* MAIN */
+
+.main-content{
+
+    flex:1;
+
+    padding:30px;
+
+    overflow:auto;
+}
+
+/* TOPBAR */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    color:white;
+}
+
+.topbar button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.15);
+}
+
+/* HERO */
+
+.hero{
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    color:white;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+/* STATS */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.stat-card{
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    color:white;
+
+    text-align:center;
+}
+
+.stat-card i{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+}
+
+.stat-card p{
+
+    font-size:30px;
+
+    font-weight:700;
+}
+
+/* FORM */
+
+.product-form{
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+}
+
+.product-form h2{
+
+    color:white;
+
+    margin-bottom:20px;
+}
+
+.product-form input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+}
+
+.product-form button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        90deg,
+        #10b981,
+        #06b6d4
+    );
+}
+
+/* PRODUCT GRID */
+
+#productGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(280px,1fr));
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.product-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.product-card:hover{
+
+    transform:
+    translateY(-10px);
+}
+
+.product-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+}
+
+.product-info{
+
+    padding:15px;
+}
+
+.product-info h3{
+
+    margin-bottom:10px;
+}
+
+.product-info p{
+
+    color:#10b981;
+
+    font-weight:700;
+}
+
+/* TOTAL */
+
+.total-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #10b981,
+        #06b6d4
+    );
+
+    color:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    margin-bottom:25px;
+}
+
+/* QRIS */
+
+.payment-section{
+
+    margin-bottom:25px;
+}
+
+.qris-card{
+
+    text-align:center;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+}
+
+.qris-card img{
+
+    margin-top:20px;
+}
+
+/* BUTTON */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.action-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+.action-buttons button:first-child{
+
+    background:#3b82f6;
+}
+
+.action-buttons button:last-child{
+
+    background:#ef4444;
+}
+
+/* TABLE */
+
+.history{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:20px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th{
+
+    background:#10b981;
+
+    color:white;
+
+    padding:15px;
+}
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid #eee;
+}
+
+/* DARK MODE */
+
+.dark{
+
+    background:#0f172a;
+}
+
+.dark .history,
+.dark .qris-card,
+.dark .product-card{
+
+    background:#1e293b;
+
+    color:white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .login-container{
+
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+
+        display:none;
+    }
+
+    .stats{
+
+        grid-template-columns:1fr;
+    }
+}
+

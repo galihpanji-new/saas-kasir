@@ -1,0 +1,323 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galih Kasir Pro X</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+
+<div id="loginPage">
+
+    <div class="login-container">
+
+        <div class="login-left">
+
+            <div class="brand">
+
+                <h1>🛒 GALIH KASIR PRO X</h1>
+
+                <p>
+                    Smart Point Of Sale System
+                    Untuk Toko Komputer Modern.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="login-right">
+
+            <div class="login-card">
+
+                <h2>Admin Login</h2>
+
+                <p>
+                    Masuk ke Dashboard
+                </p>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Username">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password">
+
+                <button onclick="login()">
+                    Masuk Dashboard
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+
+<div id="dashboard" style="display:none;">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🛒 GALIH</h2>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="fa-solid fa-box"></i>
+                Produk
+            </li>
+
+            <li>
+                <i class="fa-solid fa-qrcode"></i>
+                QRIS
+            </li>
+
+            <li>
+                <i class="fa-solid fa-receipt"></i>
+                Transaksi
+            </li>
+
+        </ul>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Dashboard Kasir</h1>
+
+                <p>
+                    Kelola Produk dan Penjualan
+                </p>
+
+            </div>
+
+            <button onclick="toggleDarkMode()">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    Smart POS Dashboard
+                </h1>
+
+                <p>
+                    Sistem kasir modern berbasis web
+                    dengan QRIS, katalog produk,
+                    dan cetak struk otomatis.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- STATISTIK -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-box"></i>
+
+                <h3>Total Produk</h3>
+
+                <p id="jumlahProduk">0</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <h3>Total Penjualan</h3>
+
+                <p id="totalPenjualan">
+                    Rp 0
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <h3>Total Transaksi</h3>
+
+                <p id="jumlahTransaksi">0</p>
+
+            </div>
+
+        </section>
+
+        <!-- FORM PRODUK -->
+
+        <section class="product-form">
+
+            <h2>
+                Tambah Produk Baru
+            </h2>
+
+            <input
+                type="text"
+                id="productName"
+                placeholder="Nama Produk">
+
+            <input
+                type="number"
+                id="productPrice"
+                placeholder="Harga Produk">
+
+            <input
+                type="file"
+                id="productImage"
+                accept="image/*">
+
+            <button onclick="addProduct()">
+                Tambah Produk
+            </button>
+
+        </section>
+
+        <!-- PRODUK -->
+
+        <section>
+
+            <div class="section-header">
+
+                <h2>Produk Toko</h2>
+
+            </div>
+
+            <div id="productGrid">
+
+            </div>
+
+        </section>
+
+        <!-- TOTAL -->
+
+        <section class="total-card">
+
+            <h2>
+
+                Total Belanja
+
+                <span id="totalHarga">
+                    Rp 0
+                </span>
+
+            </h2>
+
+        </section>
+
+        <!-- QRIS -->
+
+        <section class="payment-section">
+
+            <div class="qris-card">
+
+                <h2>QRIS Payment</h2>
+
+                <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=GalihKasir">
+
+            </div>
+
+        </section>
+
+        <!-- ACTION -->
+
+        <section class="action-buttons">
+
+            <button onclick="printStruk()">
+                🖨 Cetak Struk
+            </button>
+
+            <button onclick="clearAll()">
+                🗑 Hapus Semua
+            </button>
+
+        </section>
+
+        <!-- RIWAYAT -->
+
+        <section class="history">
+
+            <h2>Riwayat Produk</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>No</th>
+                        <th>Gambar</th>
+                        <th>Produk</th>
+                        <th>Harga</th>
+                        <th>Aksi</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="productTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
